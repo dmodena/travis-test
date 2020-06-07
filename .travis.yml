@@ -5,3 +5,17 @@ script:
   - dotnet restore
   - dotnet build --configuration Release --no-restore
   - dotnet test --no-restore
+deploy:
+- provider: azure_web_apps
+    username: $AZURE_T_USERNAME
+    password: $AZURE_T_PWD
+    site: $AZURE_T_SITE
+    on:
+      branch: travis
+  - provider: azure_web_apps
+    username: $AZURE_D_USERNAME
+    password: $AZURE_D_PWD
+    site: $AZURE_D_SITE
+    on:
+      branch: dev
+
