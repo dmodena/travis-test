@@ -6,9 +6,11 @@ script:
   - dotnet build --configuration Release --no-restore
   - dotnet test --no-restore
 deploy:
-- provider: azure_web_apps
+  provider: azure_web_apps
     username: $AZURE_USR
     password: $AZURE_PWD
     site: $AZURE_SITE
     on:
-      branch: travis
+      branch:
+        - dev
+        - travis
