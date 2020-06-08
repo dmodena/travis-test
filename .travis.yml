@@ -7,10 +7,10 @@ script:
   - dotnet test --no-restore
 deploy:
   provider: azure_web_apps
-    username: $AZURE_USR
-    password: $AZURE_PWD
-    site: $AZURE_SITE
-    on:
-      branch:
-        - dev
-        - travis
+  username: $AZURE_USR
+  password: $AZURE_PWD
+  site: $AZURE_SITE
+  on:
+    branch:
+      - dev
+      - travis
