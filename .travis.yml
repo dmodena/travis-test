@@ -11,6 +11,4 @@ deploy:
     password: $AZURE_PWD
     site: $AZURE_SITE
     on:
-      branch:
-        - dev
-        - travis
+      branch: travis
